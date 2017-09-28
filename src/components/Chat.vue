@@ -5,10 +5,10 @@
       <a @click.prevent="join()" class="tem">加入1号房间</a>
       <a @click.prevent="quit()" class="tem">退出登录</a>
       <p v-for="item in this.msgReceived"><span>{{item.name}}&nbsp;说:&nbsp;</span>{{item.msg}}</p>
-    </div>
+    </div> 
     <div class="msg_send">
-      <input type="text" class="msg_input" v-model="msg" placeholder="Say something">
-      <button class="msg_emit" @click="send()" @keypress.enter="send()">发送</button>
+      <input type="text" @keyup.enter="send()" class="msg_input" v-model="msg" placeholder="Say something">
+      <button class="msg_emit" @click="send()">发送</button>
     </div>
   </div>
 </template>
@@ -70,11 +70,11 @@ export default {
       this.msg = ''
     },
     quit () {
-      socket.emit('quit_log', function () {
-        console.log('成功退出')
-        this.$router.push('login')
-        localStorage.clear()
-      })
+      let that = this
+      socket.emit('quit_log')
+      console.log('成功退出')
+      that.$router.push('login')
+      localStorage.clear()
     }
   }
 }

@@ -53,9 +53,9 @@ io.on('connect', function (socket) {
     })
 
     // 退出登录
-    socket.on('quit_log', (cb) => {
+    socket.on('quit_log', () => {
+        console.log('有人断开了链接');
         socket.disconnect(true);
-        cb(err, res);
     })
 });
 
