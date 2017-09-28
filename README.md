@@ -1,6 +1,6 @@
 # self-work
 
-> A Vue.js project
+> Say something i give up upon you~
 
 ## Build Setup
 
