@@ -1,6 +1,6 @@
 # self-work
 
-> A Vue.js project
+> Say something i give up upon you~
 
 ## Build Setup
 
@@ -10,21 +10,14 @@ npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
+# or
+npm run start
 
-# build for production with minification
-npm run build
+# Here we need to set something before you try this staff out: in 'src/assets/components/Chat.vue' file, line 18, type your running environment as in LAN or whatever
+const socket = io.connect('192.168.2.209:3000')
+# and run
+node server/app.js
 
-# build for production and view the bundle analyzer report
-npm run build --report
+#okay, then you are probly to try this demo
 
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
